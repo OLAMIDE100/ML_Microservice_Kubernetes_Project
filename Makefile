@@ -7,12 +7,12 @@
 
 
 setup:
-	python -m venv .devops
+	python -m venv .devops_env
 
 
 
 install: setup
-	pip install -r requirements.txt
+	pip install -r docker/requirements.txt
 
 test:
 	#python -m pytest -vv --cov=myrepolib tests/*.py
