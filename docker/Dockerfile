@@ -10,7 +10,7 @@ RUN mkdir model_data
 COPY ./model_data/boston_housing_prediction.pkl /app/model_data
 
 ## Step 3:
-RUN pip install  --requirement  requirements.txt --no-cache-dir
+RUN pip install  -r  requirements.txt 
 
 # hadolint ignore=DL3013
 
