@@ -1,0 +1,72 @@
+failed to get console mode for stdout: The handle is invalid.
+[+] Building 0.0s (0/1)                                                         
+[+] Building 0.2s (2/3)                                                         
+[34m => [internal] load build definition from Dockerfile                       0.0s
+34m => => transferring dockerfile: 32B                                        0.0s
+34m => [internal] load .dockerignore                                          0.0s
+34m => => transferring context: 2B                                            0.0s
+[0m => [internal] load metadata for docker.io/library/python:3.8-slim-buster  0.1s
+[+] Building 0.3s (2/3)                                                         
+[34m => [internal] load build definition from Dockerfile                       0.0s
+34m => => transferring dockerfile: 32B                                        0.0s
+34m => [internal] load .dockerignore                                          0.0s
+34m => => transferring context: 2B                                            0.0s
+[0m => [internal] load metadata for docker.io/library/python:3.8-slim-buster  0.2s
+[+] Building 0.5s (2/3)                                                         
+[34m => [internal] load build definition from Dockerfile                       0.0s
+34m => => transferring dockerfile: 32B                                        0.0s
+34m => [internal] load .dockerignore                                          0.0s
+34m => => transferring context: 2B                                            0.0s
+[0m => [internal] load metadata for docker.io/library/python:3.8-slim-buster  0.4s
+[+] Building 0.6s (2/3)                                                         
+[34m => [internal] load build definition from Dockerfile                       0.0s
+34m => => transferring dockerfile: 32B                                        0.0s
+34m => [internal] load .dockerignore                                          0.0s
+34m => => transferring context: 2B                                            0.0s
+[0m => [internal] load metadata for docker.io/library/python:3.8-slim-buster  0.5s
+[+] Building 0.8s (3/3)                                                         
+[34m => [internal] load build definition from Dockerfile                       0.0s
+34m => => transferring dockerfile: 32B                                        0.0s
+34m => [internal] load .dockerignore                                          0.0s
+34m => => transferring context: 2B                                            0.0s
+34m => [internal] load metadata for docker.io/library/python:3.8-slim-buster  0.7s
+[+] Building 0.8s (12/12) FINISHED                                              
+[34m => [internal] load build definition from Dockerfile                       0.0s
+34m => => transferring dockerfile: 32B                                        0.0s
+34m => [internal] load .dockerignore                                          0.0s
+34m => => transferring context: 2B                                            0.0s
+34m => [internal] load metadata for docker.io/library/python:3.8-slim-buster  0.7s
+34m => [1/7] FROM docker.io/library/python:3.8-slim-buster@sha256:0b92aced9b  0.0s
+34m => [internal] load build context                                          0.0s
+34m => => transferring context: 155B                                          0.0s
+34m => CACHED [2/7] WORKDIR /app                                              0.0s
+34m => CACHED [3/7] COPY ./app.py /app                                        0.0s
+34m => CACHED [4/7] COPY ./requirements.txt /app                              0.0s
+34m => CACHED [5/7] RUN mkdir model_data                                      0.0s
+34m => CACHED [6/7] COPY ./model_data/boston_housing_prediction.pkl /app/mod  0.0s
+34m => CACHED [7/7] RUN pip install  --requirement  requirements.txt --no-ca  0.0s
+34m => exporting to image                                                     0.0s
+34m => => exporting layers                                                    0.0s
+34m => => writing image sha256:d0324ed63cadf3179f1ace0b1ff91eb3bc22d20c1faf4  0.0s
+34m => => naming to docker.io/library/house_predict                           0.0s
+REPOSITORY      TAG       IMAGE ID       CREATED          SIZE
+house_predict   latest    d0324ed63cad   15 minutes ago   426MB
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://172.17.0.2:80
+Press CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 401-939-328
+[2023-01-22 15:08:35,542] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2023-01-22 15:08:35,553] INFO in app: Inference payload DataFrame: 
+   CHAS  ...  LSTAT
+0     0  ...   4.98
+
+[1 rows x 6 columns]
+[2023-01-22 15:08:35,562] INFO in app: Prediction: [27.781000000000002]
+172.17.0.1 - - [22/Jan/2023 15:08:35] "POST /predict HTTP/1.1" 200 -
