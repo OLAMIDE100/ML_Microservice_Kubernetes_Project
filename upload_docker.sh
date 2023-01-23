@@ -11,6 +11,7 @@ dockerpath=midecreative1994/house_predict:latest
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
 
+docker login -u midecreative1994 -p "$DOCKER_PASSWORD"
 
 docker tag house_predict:latest "$dockerpath"
 
